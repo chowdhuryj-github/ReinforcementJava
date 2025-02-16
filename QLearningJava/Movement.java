@@ -22,6 +22,9 @@ public class Movement {
      */
     public static int[][] move(int[][] state, String action) {
 
+        // indicate the direction of movement
+        System.out.println("Moving to the " + action + "!");
+
         // accessing the first and second element
         int x = state[0][0];
         int y = state[0][1];
@@ -56,6 +59,22 @@ public class Movement {
             }
             System.out.println();
         }
+    }
+
+    /**
+     * method for updating the visualization state of agent
+     */
+    public static void updatePrint(String[][] gridState, int[][] state, String action) {
+
+        // accessing the x and y values
+        int x = state[0][0];
+        int y = state[0][1];
+        System.out.println();
+
+        int[][] updatedState = move(state, action);
+        
+
+
     }
     
     
