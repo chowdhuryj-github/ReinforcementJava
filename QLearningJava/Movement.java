@@ -9,10 +9,13 @@ public class Movement {
 
     // the state of the grid 
     public static String[][] GRID_STATE = {
-        {"*", " ", "*", " ", "*"},
+        {".", " ", "*", " ", "*"},
         {"*", " ", "*", " ", "*"},
         {"*", " ", "*", " ", "*"}
     };
+
+    // the dot character
+    public static String dot = ".";
 
 
     /**
@@ -43,6 +46,7 @@ public class Movement {
             y = y - 1;
         }
 
+        // returning the new state
         return new int[][]{{x, y}};
 
 
@@ -53,9 +57,10 @@ public class Movement {
      */
     public static void statePrint(String[][] gridState) {
 
-        for (String[] gridState1 : gridState) {
-            for (String gridState11 : gridState1) {
-                System.out.print(gridState11 + " ");
+        // for looping to print the grid
+        for (int i = 0; i < gridState.length; i++) {
+            for (int j = 0; j < gridState[i].length; j++) {
+                System.out.print(gridState[i][j] + " ");
             }
             System.out.println();
         }
@@ -64,16 +69,21 @@ public class Movement {
     /**
      * method for updating the visualization state of agent
      */
-    public static void updatePrint(String[][] gridState, int[][] state, String action) {
+    public static void updatePrint(String[][] gridState, int[][] state) {
+
+        // printing out the original state
+        System.out.println("Previous State: ");
+        statePrint(GRID_STATE);
 
         // accessing the x and y values
         int x = state[0][0];
         int y = state[0][1];
-        System.out.println();
+        System.out.println("The New Updated State: " + "[" + x + "]" + " " + "[" + y + "]");
 
-        int[][] updatedState = move(state, action);
+        // the new grid print statement
+        System.out.println("The New Grid");
+
         
-
 
     }
     

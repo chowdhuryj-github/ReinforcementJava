@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 
 /**
@@ -9,20 +8,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // printing out the q grid
-        QGrid.printQGrid();
-
         // a initial state
-        int[][] agentState = {{1, 2}};
+        int[][] agentState = {{0, 0}};
 
         // a initial action
-        String action = "left";
+        String action = "right";
 
+        // the new state variable
         int[][] newState = Movement.move(agentState, action);
-        System.out.println("New State: " + Arrays.deepToString(newState));
 
-        // testing out the visualization method
-        Movement.statePrint(Movement.GRID_STATE);
+        // testing out the updatePrint() method
+        Movement.updatePrint(Movement.GRID_STATE, newState);
 
         
 
